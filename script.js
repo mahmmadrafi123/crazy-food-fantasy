@@ -127,3 +127,27 @@ form.addEventListener("submit", async function (e) {
         status.style.display = "block";
     }
 });
+
+
+/* ===== LOADER ===== */
+window.addEventListener("load", function () {
+    document.body.classList.add("loaded");
+});
+
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+});
+
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
