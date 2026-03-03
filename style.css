@@ -1004,3 +1004,42 @@ body.loaded #loader {
     display: none;
     z-index: 999;
 }
+
+
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fbbf24;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+
+
+/* ===== FINAL FIX: KEEP CATEGORY GRID ALWAYS PERFECT ===== */
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  max-width:950px;
+  margin:auto;
+}
+.category-grid .card{
+  background:linear-gradient(135deg,#fbbf24,#fb923c);
+  padding:25px;
+  font-weight:bold;
+  font-size:18px;
+  border-radius:15px;
+  color:#1f2937;
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
