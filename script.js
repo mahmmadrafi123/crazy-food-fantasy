@@ -151,3 +151,63 @@ scrollBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+
+
+/* ================= VIDEO GALLERY (REAL VIDEOS) ================= */
+/* 1) Replace these IDs with YOUR real video IDs */
+const myVideoList = [
+  { id: "ln9NQ_dCxqk", title: "Cooking at Home", sub: "Simple recipe" },
+  { id: "vYyC4Kd4Ens", title: "Street Food Vlog", sub: "Food experience" },
+  { id: "pKp47zkql2c", title: "Cooking at Home", sub: "Simple recipe" },
+  { id: "pKp47zkql2c", title: "Travel & Nature", sub: "Peaceful moments" }
+];
+
+function renderVideoGallery() {
+  const grid = document.getElementById("videoGrid");
+  if (!grid) return;
+
+  grid.innerHTML = myVideoList.map(v => {
+    const thumb = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
+    return `
+      <div class="video-card" onclick="openVideo('${v.id}')">
+        <img class="video-thumb" src="${thumb}" alt="${v.title}">
+        <div class="video-card-body">
+          <div class="video-card-title">${v.title}</div>
+          <div class="video-card-sub">${v.sub}</div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function openVideo(videoId){
+  const popup = document.getElementById("videoPopup");
+  const frame = document.getElementById("videoFrame");
+  if (!popup || !frame) return;
+
+  // autoplay on open
+  frame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  popup.style.display = "flex";
+}
+
+function closeVideo(){
+  const popup = document.getElementById("videoPopup");
+  const frame = document.getElementById("videoFrame");
+  if (!popup || !frame) return;
+
+  popup.style.display = "none";
+  frame.src = ""; // stop video
+}
+
+/* click outside to close */
+document.addEventListener("click", (e) => {
+  const popup = document.getElementById("videoPopup");
+  const inner = document.querySelector(".video-popup-inner");
+  if (!popup || popup.style.display !== "flex") return;
+
+  if (e.target === popup) closeVideo();
+});
+
+/* render on load */
+window.addEventListener("load", renderVideoGallery);
