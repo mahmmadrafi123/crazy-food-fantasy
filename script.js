@@ -157,9 +157,9 @@ scrollBtn.addEventListener("click", () => {
 /* ================= VIDEO GALLERY (REAL VIDEOS) ================= */
 /* 1) Replace these IDs with YOUR real video IDs */
 const myVideoList = [
-  { id: "ln9NQ_dCxqk", title: "Cooking at Home", sub: "Simple recipe" },
+  { id: "dyg5XSf4cvw", title: "Cooking at Home", sub: "Simple recipe" },
   { id: "vYyC4Kd4Ens", title: "Street Food Vlog", sub: "Food experience" },
-  { id: "pKp47zkql2c", title: "Cooking at Home", sub: "Simple recipe" },
+  { id: "fZZ-mPdY3Lc", title: "Song Celebration", sub: "Fans celebration moment" },
   { id: "pKp47zkql2c", title: "Travel & Nature", sub: "Peaceful moments" }
 ];
 
@@ -211,3 +211,4 @@ document.addEventListener("click", (e) => {
 
 /* render on load */
 window.addEventListener("load", renderVideoGallery);
+
